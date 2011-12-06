@@ -1,0 +1,20 @@
+#!/bin/sh
+plutil -type json -value '{ "DYLD_INSERT_LIBRARIES": "/Library/MobileSubstrate/DynamicLibraries/cytogenesis.dylib" }' -key EnvironmentVariables /System/Library/LaunchDaemons/com.apple.assistantd.plist 
+plutil -type json -value '{ "DYLD_INSERT_LIBRARIES": "/Library/MobileSubstrate/DynamicLibraries/cytogenesis.dylib" }' -key EnvironmentVariables /System/Library/LaunchDaemons/com.apple.assistant_service.plist 
+if [ ! -f "/var/mobile/Library/Preferences/com.vlo.libsandwich.plist" ]; then
+cat > /var/mobile/Library/Preferences/com.vlo.libsandwich.plist << EOF
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+        <key>ValidationData</key>
+        <data>DATA_GOES_HERE</data>
+</dict>
+</plist>
+EOF
+fi
+echo "Don't forget to change values in /var/mobile/Library/Preferences/com.apple.assistant.plist and /var/mobile/Library/Preferences/com.vlo.libsandwich.plist!!"
+echo "Please reboot if this is the first time you install this package!"
+echo "Mad props to velocitylimitless/rms/@winocm for this!"
+echo ""
+

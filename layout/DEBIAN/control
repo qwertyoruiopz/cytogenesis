@@ -1,0 +1,9 @@
+Package: com.vlo.cytogenesis
+Name: cytogenesis
+Depends: mobilesubstrate, com.ericasadun.utilities
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: Siri. Legally, on your iDevice!
+Maintainer: qwertyoruiop+winocm
+Author: qwertyoruiop+winocm
+Section: Tweaks
